@@ -1,0 +1,55 @@
+﻿@model List<Ejercicio01.Models.Contacto2>
+@{
+    var conteoC = 0;
+    var conteoN = 0;
+}
+
+
+<div class="container-fluid  mb-5">
+    <div class="row justify-content-center">
+        @foreach (var item in Model)
+        {
+            @if (item.Estado != null)
+            {
+
+                conteoC = conteoC + 1;
+                <div class="card border border-primary shadow-0 col-8 col-xs-4 col-md-4 col-lg-3 col-sm-6 col-xl-3 mb-3 mx-2" style="max-width: 15rem;">
+                    <div class="card-body">
+                        <h5 class="card-title text-danger"> @Html.DisplayFor(modelItem => item.Nombre)</h5>
+                        <p class="card-text text-dark">@Html.DisplayFor(modelItem => item.Telefono)</p>
+                        <p class="card-text text-muted">
+                            @Html.DisplayFor(modelItem => item.Calle)  #@Html.DisplayFor(modelItem => item.NumeroExt),
+                            @Html.DisplayFor(modelItem => item.Colonia) CP @Html.DisplayFor(modelItem => item.Cp),
+                            @Html.DisplayFor(modelItem => item.Ciudad),
+                            @Html.DisplayFor(modelItem => item.Entidad).
+                        </p>
+                        <a id="@item.Id" class="card-link editar pe-auto" style="cursor: pointer" onclick="vistaPE(this);" data-toggle="modal" data-target="#myModal">Edit</a>
+                        <a id="@item.Id" class="card-link editar pe-auto" style="cursor: pointer" onclick="vistaPD(this);" data-toggle="modal" data-target="#myModal">Delete</a>
+                    </div>
+                </div>
+
+            }
+            @if (item.Estado == null)
+            {
+
+                conteoN = conteoN + 1;
+                <div class="card border border-danger shadow-0 col-8 col-xs-4 col-md-4 col-lg-3 col-sm-6 col-xl-3 mb-3 mx-2" style="max-width: 15rem;">
+                    <div class="card-body">
+                        <h5 class="card-title text-danger" id="tittle-@item.Id"> @Html.DisplayFor(modelItem => item.Nombre)</h5>
+                        <p class="card-text text-dark">@Html.DisplayFor(modelItem => item.Telefono)</p>
+                        <p class="card-text text-muted">
+                            @Html.DisplayFor(modelItem => item.Calle)  #@Html.DisplayFor(modelItem => item.NumeroExt),
+                            @Html.DisplayFor(modelItem => item.Colonia) CP @Html.DisplayFor(modelItem => item.Cp),
+                            @Html.DisplayFor(modelItem => item.Ciudad),
+                            @Html.DisplayFor(modelItem => item.Entidad).
+                        </p>
+                        <a id="@item.Id" class="card-link pe-auto" style="cursor: pointer" onclick="vistaPE(this);" data-toggle="modal" data-target="#myModal">Edit</a>
+                        <a id="@item.Id" class="card-link pe-auto" style="cursor: pointer" onclick="vistaPD(this);" data-toggle="modal" data-target="#myModal">Delete</a>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+    <input id="conteoC" value=@conteoC type="hidden">
+    <input id="conteoN" value=@conteoN type="hidden">
+</div>

@@ -1,0 +1,67 @@
+﻿@model Ejercicio01.Models.Contacto2
+
+<h1>Edit</h1>
+
+<h4>Contacto</h4>
+<hr />
+<div class="container">
+    <div class="row">
+        <div class="col-md-11">
+            <form asp-action="Update">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div id="error" class="text-danger" style="font-style: italic; font-weight: bold;"></div>
+                <div class="form-group m-2">
+                    <label asp-for="Nombre" class="control-label"></label>
+                    <input asp-for="Nombre" id="nombre" name="nombre" class="form-control" required />
+                    <div id="nombreF"></div>
+                </div>
+                <div class="form-group m-2">
+                    <label asp-for="Telefono" class="control-label"></label>
+                    <input type="number" asp-for="Telefono" id="telefono" name="telefono" class="form-control" required />
+                    <div id="telefonoF"></div>
+                </div>
+                <div class="form-group m-2">
+                    <label asp-for="Calle" class="control-label"></label>
+                    <input asp-for="Calle" id="calle" name="calle" class="form-control" />
+                    <div id="calleF"></div>
+                </div>
+                <div class="form-group m-2">
+                    <label asp-for="NumeroExt" class="control-label"></label>
+                    <input asp-for="NumeroExt" id="numeroExt" name="numeroExt" class="form-control" required />
+                    <div id="numeroExtF"></div>
+                </div>
+                <div class="form-group m-2">
+                    <label asp-for="Colonia" class="control-label"></label>
+                    <input asp-for="Colonia" id="colonia" name="colonia" class="form-control" required />
+                    <div id="coloniaF"></div>
+                </div>
+                <div class="form-group m-2">
+                    <label asp-for="Cp" class="control-label"></label>
+                    <input asp-for="Cp" id="cp" name="cp" class="form-control" required />
+                    <div id="cpF"></div>
+                </div>
+                <div class="form-group m-2">
+                    <label asp-for="Ciudad" class="control-label"></label>
+                    <input asp-for="Ciudad" id="ciudad" name="ciudad" class="form-control" required />
+                    <div id="ciudadF"></div>
+                </div>
+                <div class="form-group m-2">
+                    <label asp-for="Entidad" class="control-label"></label>
+                    <input asp-for="Entidad" id="entidad" name="entidad" class="form-control" required />
+                    <div id="entidadF"></div>
+                </div>
+                <div class="form-group m-2">
+                    <input type="hidden" asp-for="Id" id="id" />
+                    <input type="hidden" asp-for="DireccionId" id="direccionId" />
+                    <input type="button" value="Guardar" id="create" class="btn btn-primary" onclick="editar(); " />
+                    <button class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</div>
+<script>
+
+</script>

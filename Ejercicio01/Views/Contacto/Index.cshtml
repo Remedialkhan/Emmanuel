@@ -1,0 +1,55 @@
+﻿@model List<Ejercicio01.Models.Contacto2>
+@{
+    ViewData["Title"] = "Contacto";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!--Contacto-->
+<div class="jumbotron mb-2" style="background-color: #CFD8DC" onload="vistaPR();" id="contactos">
+    <div class="row text-center">
+        <h1 class="mr-auto">Contactos</h1>
+    </div>
+    <div class="row mx-3">
+        <p class="lead">En esta sección se mostrarán los contactos</p>
+    </div>
+    <div class="container d-flex align-items-center pb-2 ">
+        @*<a asp-action="Create"></a>*@
+        <button type="button" class="btn btn-success btn-sm mx-2" style="background-color: #28a745" onclick="vistaPC();" data-toggle="modal" data-target="#myModal">Agregar</button>
+    </div>
+</div>
+
+<nav class="navbar navbar-expand justify-content-center">
+
+        <div class="d-flex justify-content-between">
+            <ul class="navbar-nav ">
+                <li class="nav-item">
+                    <a class="nav-link text-dark" style="cursor: pointer" onclick="Prueba1();">Lista</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" style="cursor: pointer" onclick="Prueba2();">Barras</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" style="cursor: pointer" onclick="Prueba3();">Pastel</a>
+                </li>
+            </ul>
+        </div>
+
+</nav>
+<div class="d-flex justify-content-center" id="alerta"></div>
+
+<div id="cards" class="mt-2"></div>
+<div class="container text-center mb-5" id="grafica" style="height: 400px; width: 80%;" ></div>
+<div class="container text-center mb-5" id="grafica2" style="height: 400px; width: 80%;" ></div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            @* Contenido *@
+            <div class="modal-body">
+                <div id="resultado"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/js/main.js" asp-append-version="true"></script>
