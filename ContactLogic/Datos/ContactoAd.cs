@@ -76,9 +76,10 @@ namespace Ejercicio01.Datos
             {
                 try
                 {
-                    var consulta = new List<Category>();
-                    var category = contexto.Contactos.Select(x => x.Estado).ToList();
-                    var category1 = contexto.Contactos.Select(x => x.Estado).Distinct().ToList();
+                    List<Category> consulta = new List<Category>();
+                    List<string> category = contexto.Contactos.Select(x => x.Estado).ToList();
+                    List<string> category1 = contexto.Contactos.Select(x => x.Estado).Distinct().ToList();
+                    int a = 0;
                     //Cambiar tipo de dato
                     for (var i = 0; i < category1.Count(); i++)
                     {
@@ -206,9 +207,4 @@ namespace Ejercicio01.Datos
         }
     }
 
-    public class Category
-    {
-        public String Nombre { get; set; }
-        public int Quantity { get; set; }
-    }
 }

@@ -26,6 +26,10 @@ namespace Ejercicio01.Models
         public int? Cp { get; set; }
         public string Ciudad { get; set; }
         public string Entidad { get; set; }
+    }
+    public class Category
+    {
+        public String Nombre { get; set; }
         public int Quantity { get; set; }
     }
 }

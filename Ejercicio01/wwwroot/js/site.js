@@ -1,16 +1,11 @@
-﻿
-//Cargar vista principal
+﻿//Cargar vista principal
 window.onload = function () {
     var url1 = "/Contacto/Nuevo";
     $.get(url1).done(function (data) {
         $("#cards").html(data);
         $("#grafica").hide();
         $("#grafica2").hide();
-
-
     });
-
-
 };
 //Cargar Modal con diferentes Páginas
 function vistaPC() {
@@ -27,7 +22,6 @@ function vistaPC() {
         }
     });
 }
-
 function vistaPE(a) {
     var b = a.id;
     var urlA = '/Contacto/Edit';
@@ -59,8 +53,8 @@ function vistaPD(a) {
         },
     });
 }
+                //Funciones de los botones de cada Modal
 
-//Funciones de los botones de cada Modal
 //Crear
 function enviar() {
 
