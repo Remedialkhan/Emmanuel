@@ -79,7 +79,7 @@ namespace Ejercicio01.Datos
                     List<Category> consulta = new List<Category>();
                     List<string> category = contexto.Contactos.Select(x => x.Estado).ToList();
                     List<string> category1 = contexto.Contactos.Select(x => x.Estado).Distinct().ToList();
-                    int e = 0;
+                    int e1 = 0;
                     //Cambiar tipo de dato
                     for (var i = 0; i < category1.Count(); i++)
                     {
