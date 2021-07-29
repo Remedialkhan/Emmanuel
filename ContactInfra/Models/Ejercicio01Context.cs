@@ -14,12 +14,10 @@ namespace Ejercicio01.Models
         public Ejercicio01Context()
         {
         }
-
         public Ejercicio01Context(DbContextOptions<Ejercicio01Context> options)
             : base(options)
         {
         }
-
         public virtual DbSet<Contacto> Contactos { get; set; }
         public virtual DbSet<Direccion> Direccions { get; set; }
 
@@ -81,10 +79,8 @@ namespace Ejercicio01.Models
                     .HasMaxLength(35)
                     .IsUnicode(false);
             });
-
             OnModelCreatingPartial(modelBuilder);
         }
-
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
     }
 }
