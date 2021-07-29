@@ -18,9 +18,9 @@ namespace Ejercicio01.Datos
                     List<Contacto2> consulta2 =
                    contexto.Contactos.Select(x => new Contacto2
                    {
-                       Nombre = x.Nombre,
-                       DireccionId = x.DireccionId,
                        Id = x.Id,
+                       DireccionId = x.DireccionId,
+                       Nombre = x.Nombre,
                        Estado = x.Estado,
                        Telefono = x.Telefono,
                        Calle = x.Direccion.Calle,
@@ -81,7 +81,7 @@ namespace Ejercicio01.Datos
                     List<string> category1 = contexto.Contactos.Select(x => x.Estado).Distinct().ToList();
                     int e1 = 0;
                     //Cambiar tipo de dato
-                    for (var i = 0; i < category1.Count(); i++)
+                    for (int i = 0; i < category1.Count(); i++)
                     {
                         consulta.Add(new Category { Nombre = category1[i], Quantity = category.Where(x => x == category1[i]).Count() });
                     }
@@ -112,8 +112,8 @@ namespace Ejercicio01.Datos
                     contexto.Direccions.Add(direccion);
                     contexto.SaveChanges();
 
-                    var consulta = contexto.Direccions.OrderByDescending(y => y.Id).Select(x => x.Id).First().ToString();
-                    var idcons = Int32.Parse(consulta);
+                    string consulta = contexto.Direccions.OrderByDescending(y => y.Id).Select(x => x.Id).First().ToString();
+                    int idcons = Int32.Parse(consulta);
 
                     contacto.Nombre = context.Nombre;
                     contacto.Telefono = context.Telefono;
@@ -171,10 +171,10 @@ namespace Ejercicio01.Datos
         {
             using (Ejercicio01Context contexto = new Ejercicio01Context())
             {
-                var direccion = modelo.DireccionId;
-                var contacto = modelo.Id;
-                var estado = modelo.Estado;
-                var a = 0;
+                int direccion = modelo.DireccionId;
+                int contacto = modelo.Id;
+                string estado = modelo.Estado;
+                int a = 0;
                 var comprobar = modelo.Estado;
                 try
                 {
