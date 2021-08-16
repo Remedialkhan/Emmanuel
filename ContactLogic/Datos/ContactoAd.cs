@@ -19,6 +19,7 @@ namespace Ejercicio01.Datos
                     List<Contacto2> consulta2 =
                    contexto.Contactos.Select(x => new Contacto2
                    {
+                       //Cambios en la rama master sin afectar a la RP1
                        Id = x.Id,
                        DireccionId = x.DireccionId,
                        Nombre = x.Nombre,
