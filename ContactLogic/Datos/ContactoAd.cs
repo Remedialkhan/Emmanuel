@@ -12,6 +12,7 @@ namespace Ejercicio01.Datos
 
         public List<Contacto2> Consulta()
         {
+            //Cambios en la Rama secundaria
             using (Ejercicio01Context contexto = new Ejercicio01Context())
             {
                 try
