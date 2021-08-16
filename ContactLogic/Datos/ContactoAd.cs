@@ -9,8 +9,7 @@ namespace Ejercicio01.Datos
 {
     public class ContactoAd
     {
-        //commit de prueba sin afectar la master
-        //Commit 2
+
         public List<Contacto2> Consulta()
         {
             using (Ejercicio01Context contexto = new Ejercicio01Context())
